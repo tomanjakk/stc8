@@ -1,0 +1,38 @@
+#include "GPIO.h"
+#include "Delay.h"
+#include "NVIC.h"
+#include "UART.h"
+#include "Switch.h"
+#include "Config.h"
+
+#include "MY_Config.h"
+
+void dp(){
+
+P51=0;
+	delay_ms(250);
+	delay_ms(250);
+	delay_ms(250);
+	delay_ms(250);
+	
+	P51=1;
+		delay_ms(250);
+	delay_ms(250);
+	delay_ms(250);
+	delay_ms(250);
+};
+void main() {
+int i=0;
+EA=1;
+MY_Timer_Config();
+MY_GPIO_Config();
+MY_UART_Config();
+printf("¿ªÆô³É¹¦\n");
+	
+	while(1){
+MY_TX1_write2buff();
+
+	
+	}
+	
+}
